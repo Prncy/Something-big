@@ -1,6 +1,4 @@
-// Wednesday, 2 September 2026 at 12:30 in Zambia (CAT, UTC+2).
-// Unix timestamp: 1788345000
-const targetTimestamp = 1788293880;
+const targetTimestamp = 1788293880000;
 
 const elements = {
   days: document.getElementById("days"),
@@ -44,7 +42,8 @@ function updateCountdown() {
   updateUnit("seconds", seconds);
 
   if (remaining <= 0) {
-    document.getElementById("message").textContent = "The countdown has reached Wednesday 12:30 HRS.";
+    document.getElementById("message").textContent =
+      "The countdown has reached 00:25 HRS.";
     clearInterval(timer);
   }
 }

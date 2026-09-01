@@ -1,6 +1,6 @@
 // Wednesday, 2 September 2026 at 12:30 in Zambia (CAT, UTC+2).
 // Unix timestamp: 1788345000
-const targetTimestamp = 1788341400000;
+const targetTimestamp = 1788293880;
 
 const elements = {
   days: document.getElementById("days"),

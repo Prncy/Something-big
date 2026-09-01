@@ -1,4 +1,4 @@
-const targetTimestamp = 1788293880000;
+const targetTimestamp = 1788517800000;
 
 const elements = {
   days: document.getElementById("days"),

@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0e15;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Center Content Perfectly */
+.hero-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Eye-catching Neon Heading */
+.glow-text {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: #00f5ff; /* Neon Blue */
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 
+                 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+.media-container {
+    margin-top: 2rem;
+    max-width: 30%;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Beautiful Sticky Footer */
+.social-footer {
+    width: 100%;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.02); /* Ultra subtle separation */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-footer p {
+    font-size: 0.4rem;
+    color: #8a8b98;
+}
+
+/* Interactive Social Icons */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #8a8b98;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+/* Neon Glow Hover Effect */
+.social-icons a:hover {
+    color: #00f5ff;
+    transform: translateY(-3px);
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .glow-text {
+        font-size: 2rem;
+    }
+}

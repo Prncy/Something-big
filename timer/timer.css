@@ -1,0 +1,112 @@
+:root {
+  --card-bg: #12131a;            /* Flat slate dark background */
+  --text-color: #00f5ff;         /* Cyber Neon Cyan */
+  --label-color: #ffd700;        /* Gold label */
+  --card-radius: 16px;           /* Rounded corner radius for mobile scale */
+}
+
+/* Mobile-optimized full width wrapper */
+.countdown-clock-wrapper {
+  width: 100%;
+  max-width: 480px;              /* Locked to phone sizing constraints */
+  margin: 1.5rem auto;
+  padding: 0 0.75rem;
+}
+
+/* 2x2 grid is standard and fits naturally on mobile portrait displays */
+.flip-clock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 16px;
+  width: 100%;
+}
+
+.unit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px 10px;
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.unit-label {
+  margin-top: 12px;
+  color: var(--fc-label-color, var(--label-color));
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* --- Clean Full-Card Rigging --- */
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 110px;                 /* Ideal height footprint for mobile viewports */
+  perspective: 1000px;           /* Depth environment for whole card tumble */
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;               /* Big, highly scannable numbers */
+  font-weight: 800;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  backface-visibility: hidden;   /* Keeps flipped-away side invisible */
+  will-change: transform;         /* Offloads execution workloads to system GPU */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.5s, 
+              box-shadow 0.5s;
+}
+
+/* Position tracking configuration layers */
+.current-val {
+  z-index: 2;
+  transform: rotateX(0deg);
+}
+
+.next-val {
+  z-index: 1;
+  transform: rotateX(-180deg);   /* Hidden behind, upside down waiting to turn */
+}
+
+/* --- Trigger States Driven by Javascript --- */
+.flip-card.animate .current-val {
+  transform: rotateX(180deg);
+}
+
+.flip-card.animate .next-val {
+  transform: rotateX(0deg);
+  z-index: 3;
+  /* Glow flash burst effect on completion */
+  border-color: var(--text-color);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.4), 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Desktop Scaling Adjustments (Keeps layout clean if viewed on PC) --- */
+@media (min-width: 580px) {
+  .countdown-clock-wrapper {
+    max-width: 800px;
+  }
+  .flip-clock {
+    grid-template-columns: repeat(4, 1fr); /* Snaps back to straight inline row */
+  }
+  .flip-card {
+    height: 140px;
+  }
+  .card-face {
+    font-size: 5rem;
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Something Big</title>
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./timer/timer.css" />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <main class="hero-container">
+      <!-- <h1 class="glow-text">Something Big Is Coming</h1> -->
+      <video
+        class="neon"
+        src="./assets/neon.mp4"
+        autoplay
+        muted
+        loop
+        style="width: 100%; height: 100%"
+      ></video>
+
+      <!-- Insert your timer container here -->
+      <div class="countdown-clock-wrapper">
+        <div class="countdown-clock-wrapper">
+          <div class="flip-clock" id="mainFlipClock">
+            <!-- DAYS CARD -->
+            <div class="unit-box">
+              <div class="flip-card" data-unit="days">
+                <div class="card-face current-val">00</div>
+                <div class="card-face next-val">00</div>
+              </div>
+              <p class="unit-label">Days</p>
+            </div>
+
+            <!-- HOURS CARD -->
+            <div class="unit-box">
+              <div class="flip-card" data-unit="hours">
+                <div class="card-face current-val">00</div>
+                <div class="card-face next-val">00</div>
+              </div>
+              <p class="unit-label">Hours</p>
+            </div>
+
+            <!-- MINUTES CARD -->
+            <div class="unit-box">
+              <div class="flip-card" data-unit="minutes">
+                <div class="card-face current-val">00</div>
+                <div class="card-face next-val">00</div>
+              </div>
+              <p class="unit-label">Mins</p>
+            </div>
+
+            <!-- SECONDS CARD -->
+            <div class="unit-box">
+              <div class="flip-card" data-unit="seconds">
+                <div class="card-face current-val">00</div>
+                <div class="card-face next-val">00</div>
+              </div>
+              <p class="unit-label">Secs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="./timer/timer.js"></script>
+
+      <!-- Example of using your asset -->
+      <div class="media-container">
+        <img src="./assets/cable dude.png" alt="Coming Soon" class="hero-img" />
+      </div>
+    </main>
+
+    <!-- Semantic Footer with Social Links -->
+    <footer class="social-footer">
+      <p>&copy; 2026 Something Big. Stay tuned!</p>
+      <div class="social-icons">
+        <a href="#" target="_blank" aria-label="Twitter"
+          ><i class="fab fa-twitter"></i>Twitter</a
+        >
+        <a href="#" target="_blank" aria-label="Instagram"
+          ><i class="fab fa-instagram"></i>instagram</a
+        >
+        <a href="#" target="_blank" aria-label="Discord"
+          ><i class="fab fa-discord"></i>discord</a
+        >
+        <a href="#" target="_blank" aria-label="YouTube"
+          >facebook<i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

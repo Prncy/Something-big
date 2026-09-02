@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Target Time: 2nd September 2026 at 12:30 PM
-  const targetDate = new Date("2026-09-02T12:30:00").getTime();
+  // Target Time: 2nd September 2026 at 15:30 PM
+  const targetDate = new Date("2026-09-02T15:30:00").getTime();
 
   const units = {
     days: document.querySelector('[data-unit="days"]'),

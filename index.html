@@ -7,9 +7,8 @@
     <meta name="description" content="This big has been created for big reveals for the copperbelt university student chapters."/>
     <title>Something Big</title>
     <!-- Font Awesome for Social Icons --> 
-    <link rel="stylesheet" href=https://cloudflare.com">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./timer/timer.css" />
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="/my-favicon/./favicon-96x96.png?v=20260902" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/my-favicon/./favicon.svg?v=20260902" />
@@ -21,82 +20,47 @@
       <script defer src="https://cloud.umami.is/script.js" data-website-id="19de0da7-983d-42f5-b618-97da3c25c420"></script>
   </head>
   <body>
-    <!-- Main Container -->
-    <main class="hero-container">
-      <!-- <h1 class="glow-text">Something Big Is Coming</h1> -->
-      <video
-        class="neon"
-        src="./assets/neon.mp4"
-        autoplay
-        muted
-        loop
-        style="width: 100%; height: 100%"
-      ></video>
+    <main class="experience-container">
+        <!-- Hero & Countdown Section -->
+        <section class="hero-section">
+            <h1 class="project-title">PROJECT: Loading...</h1>
+            <p class="subtext">Something is approaching. Watch the alignment.</p>
+            
+            <div class="countdown-container" id="countdown">
+                <div class="time-block"><span class="digits" id="days">00</span><span class="label">Days</span></div>
+                <div class="time-block"><span class="digits" id="hours">00</span><span class="label">Hours</span></div>
+                <div class="time-block"><span class="digits" id="minutes">00</span><span class="label">Mins</span></div>
+                <div class="time-block"><span class="digits" id="seconds">00</span><span class="label">Secs</span></div>
+            </div>
+        </section>
 
-      <!-- Insert your timer container here -->
-      <div class="countdown-clock-wrapper">
-          <div class="flip-clock" id="mainFlipClock">
-            <!-- DAYS CARD -->
-            <div class="unit-box">
-              <div class="flip-card" data-unit="days">
-                <div class="card-face current-val">00</div>
-                <div class="card-face next-val">00</div>
-              </div>
-              <p class="unit-label">Days</p>
+        <!-- Interactive Character Theater -->
+        <section class="character-theater" id="characterTheaterSection">
+            <div class="video-viewport" id="videoViewport">
+                <video id="characterVideo" playsinline muted preload="auto">
+                    <source src="./media/q1.webm" type="video/webm">
+                </video>
+                <!-- Cinematic Subtitle Layer -->
+                <div class="cinematic-caption-layer" id="captionOverlay"></div>
+                <!-- Final Cinematic Text Overlays -->
+                <div class="final-words-layer" id="finalWordsOverlay"></div>
             </div>
 
-            <!-- HOURS CARD -->
-            <div class="unit-box">
-              <div class="flip-card" data-unit="hours">
-                <div class="card-face current-val">00</div>
-                <div class="card-face next-val">00</div>
-              </div>
-              <p class="unit-label">Hours</p>
+            <!-- Interaction Interface Area -->
+            <div class="interaction-interface" id="interactionInterface">
+                <div class="action-deck" id="actionDeck">
+                    <!-- Buttons are dynamically hydrated by dialogue.js map -->
+                </div>
             </div>
+        </section>
 
-            <!-- MINUTES CARD -->
-            <div class="unit-box">
-              <div class="flip-card" data-unit="minutes">
-                <div class="card-face current-val">00</div>
-                <div class="card-face next-val">00</div>
-              </div>
-              <p class="unit-label">Mins</p>
-            </div>
-
-            <!-- SECONDS CARD -->
-            <div class="unit-box">
-              <div class="flip-card" data-unit="seconds">
-                <div class="card-face current-val">00</div>
-                <div class="card-face next-val">00</div>
-              </div>
-              <p class="unit-label">Secs</p>
-            </div>
-          </div>
-      </div>
-
-      <script src="./timer/timer.js"></script>
-
-      <!-- Example of using your asset -->
-      <div class="media-container">
-        <img src="./assets/cable dude.png" alt="Coming Soon" class="hero-img" />
-      </div>
+        <!-- Reveal Portal Deck (Visible only when countdown hits zero) -->
+        <section id="portalDeck" class="hidden">
+            <a href="https://malichij02.github.io/icatazCbuWebsite/" class="portal-btn">ENTER THE UNKNOWN</a>
+        </section>
     </main>
 
-    <!-- Semantic Footer with Social Links -->
-    <footer class="social-footer">
-      <p>&copy; 2026 Something Big. Stay tuned!</p>
-      <div class="social-icons">
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter"
-          ><i class="fab fa-twitter"> X</i></a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram"
-          ><i class="fab fa-instagram"> Instagram</i></a>
-        <a href="#" target="_blank" aria-label="LinkedIn"
-          ><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://youtube.com" target="_blank" aria-label="YouTube"
-          ><i class="fab fa-youtube"></i
-        > YouTube</a>
-      </div>
-    </footer>
-    
-  </body>
+    <script src="dialogue.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

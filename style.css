@@ -177,6 +177,21 @@ body {
     border-color: rgba(255, 255, 255, 0.05);
 }
 
+.social a{
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);  
+    
+}
+.social{
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1), inset 0 0 15px rgba(0, 242, 255, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: center;
+    border: 2px solid var(--cyan-glow);
+    color: rgba(255, 255, 255, 0);
+    border-radius: 14px;
+    padding: 5px;
+}
+
 /* Prominent Portal Action Link Element */
 .portal-btn {
     display: block;
